@@ -20,7 +20,7 @@
       --bg-alt: #101010;
       --red:    #C8000A;
       --white:  #F0EBE3;
-      --muted:  #5A5450;
+      --muted:  #8F8781;
       --border: rgba(200,180,160,0.08);
     }
 
@@ -221,6 +221,48 @@
       font-style: normal;
       color: var(--red);
     }
+    .about-media {
+      margin-top: 28px;
+      width: min(540px, 100%);
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(16,16,16,0.95), rgba(8,8,8,0.95));
+      padding: 8px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.45);
+    }
+    .about-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,0,10,0.24), transparent 58%);
+      pointer-events: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    .about-media:hover::after { opacity: 0.95; }
+    .about-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.04) brightness(0.92);
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease;
+    }
+    .about-media:hover img {
+      transform: scale(1.035);
+      filter: saturate(1.04) contrast(1.05) brightness(0.98);
+    }
+    .about-media figcaption {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 10px;
+      padding-left: 2px;
+    }
     .kicker {
       font-family: 'Oswald', sans-serif;
       font-size: 10px;
@@ -260,7 +302,7 @@
       border-left: 2px solid var(--red);
       padding: 14px 0 14px 20px;
       font-style: italic;
-      color: rgba(240,235,227,0.55);
+      color: rgba(240,235,227,0.75);
       line-height: 1.84;
     }
     .btn-expand {
@@ -461,7 +503,7 @@
       transform: translateY(-50%);
       font-family: 'Bebas Neue', cursive;
       font-size: 56px;
-      color: rgba(240,235,227,0.18);
+      color: rgba(240,235,227,0.36);
       cursor: pointer;
       padding: 20px 28px;
       transition: color 0.2s;
@@ -493,7 +535,7 @@
       font-size: 11px;
       color: var(--muted);
       letter-spacing: 2px;
-      opacity: 0.55;
+      opacity: 0.78;
       text-align: center;
     }
     .footer-social {
@@ -553,6 +595,10 @@
       .nav-links { gap: 24px; }
       #about { padding: 80px 24px; }
       .about-inner { grid-template-columns: 1fr; gap: 44px; }
+      .about-media {
+        width: 100%;
+        max-width: 560px;
+      }
       .gallery-head { padding: 0 24px; }
       .photo-grid { grid-template-columns: repeat(2, 1fr); }
       .photo-item:nth-child(1) { grid-column: span 2; }
@@ -600,6 +646,10 @@
   <div class="about-inner">
     <div class="reveal">
       <h2>Full<br><em>Throttle</em><br>Live</h2>
+      <figure class="about-media">
+        <img src="pictures/picture%20(12).jpeg" alt="BWare live optreden" loading="lazy" />
+        <figcaption>Live energie, rauw en vol overtuiging</figcaption>
+      </figure>
     </div>
     <div class="reveal reveal-d1">
       <p class="kicker">Over de Band</p>
