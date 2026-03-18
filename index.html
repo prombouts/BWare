@@ -411,6 +411,125 @@
       .sl-artist { font-size: 12px; }
     }
 
+    /* ── GIGS ── */
+    #gigs {
+      border-top: 1px solid var(--border);
+      padding: 112px 48px;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(200,0,10,0.16) 0%, rgba(200,0,10,0.03) 28%, transparent 55%),
+        linear-gradient(180deg, rgba(16,16,16,0.52), rgba(8,8,8,0.08));
+    }
+    .gigs-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .gigs-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(50px, 7.5vw, 92px);
+      letter-spacing: 6px;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 44px;
+    }
+    .gig-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(16,16,16,0.96), rgba(8,8,8,0.98));
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: start;
+      box-shadow: 0 24px 52px rgba(0,0,0,0.38);
+      position: relative;
+      overflow: hidden;
+    }
+    .gig-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(200,0,10,0.18), transparent 42%);
+      pointer-events: none;
+    }
+    .gig-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .gig-meta {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .gig-meta strong {
+      color: var(--white);
+      font-weight: 400;
+      letter-spacing: 0.4px;
+    }
+    .gig-support {
+      margin-top: 4px;
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(240,235,227,0.68);
+    }
+    .gig-countdown {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(240,235,227,0.2);
+      background: rgba(240,235,227,0.04);
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .gig-venue-link {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(240,235,227,0.16);
+      width: fit-content;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .gig-venue-link:hover {
+      color: var(--white);
+      border-color: rgba(240,235,227,0.42);
+    }
+    .gig-ticket {
+      position: relative;
+      z-index: 1;
+      align-self: center;
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border: 1px solid rgba(200,0,10,0.58);
+      background: rgba(200,0,10,0.12);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s, border-color 0.2s;
+    }
+    .gig-ticket:hover {
+      background: rgba(200,0,10,0.24);
+      border-color: rgba(200,0,10,0.9);
+      transform: translateY(-2px);
+    }
+
     /* ── GALLERY ── */
     #gallery {
       border-top: 1px solid var(--border);
@@ -595,6 +714,16 @@
       .nav-links { gap: 24px; }
       #about { padding: 80px 24px; }
       .about-inner { grid-template-columns: 1fr; gap: 44px; }
+      #gigs { padding: 80px 24px; }
+      .gig-card {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 26px;
+      }
+      .gig-ticket {
+        justify-self: start;
+        align-self: start;
+      }
       .about-media {
         width: 100%;
         max-width: 560px;
@@ -619,6 +748,7 @@
   <ul class="nav-links">
     <li><a href="#about">Over ons</a></li>
     <li><a href="#setlist">Setlist</a></li>
+    <li><a href="#gigs">Optredens</a></li>
     <li><a href="#gallery">Foto's</a></li>
   </ul>
   <div class="nav-social">
@@ -694,6 +824,27 @@
   </div>
 </section>
 
+<!-- Gigs -->
+<section id="gigs">
+  <div class="gigs-inner">
+    <p class="kicker">Aankomende optredens</p>
+    <h2 class="gigs-title reveal">Waar je ons ziet</h2>
+    <article class="gig-card reveal reveal-d1" aria-label="Eerstvolgend optreden">
+      <div>
+        <h3 class="gig-name">FoxFarm</h3>
+        <div class="gig-meta">
+          <p><strong>Locatie:</strong> Zuilchemstraat 2, Tilburg</p>
+          <p><strong>Datum &amp; tijd:</strong> 09 mei 2026, 20:30 t/m 23:59</p>
+          <p class="gig-support">Special guest: tba</p>
+          <a class="gig-venue-link" href="http://foxfarm.nl" target="_blank" rel="noopener">foxfarm.nl</a>
+        </div>
+        <p class="gig-countdown" id="gig-countdown">Nog even...</p>
+      </div>
+      <a class="gig-ticket" href="https://shop.ikbenaanwezig.nl/tickets/event/bware-foxfarm-live" target="_blank" rel="noopener">Tickets &#8599;</a>
+    </article>
+  </div>
+</section>
+
 <!-- Gallery -->
 <div id="gallery">
   <div class="gallery-head">
@@ -757,6 +908,23 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Gig countdown (Europe/Amsterdam local time)
+  const gigCountdown = document.getElementById('gig-countdown');
+  if (gigCountdown) {
+    const eventDate = new Date(2026, 4, 9, 20, 30, 0);
+    const now = new Date();
+    const msLeft = eventDate.getTime() - now.getTime();
+    const dayMs = 24 * 60 * 60 * 1000;
+
+    if (msLeft > 0) {
+      const days = Math.ceil(msLeft / dayMs);
+      gigCountdown.textContent = `Nog ${days} dag${days === 1 ? '' : 'en'} tot FoxFarm`;
+    } else {
+      const eventEnd = new Date(2026, 4, 9, 23, 59, 0);
+      gigCountdown.textContent = now <= eventEnd ? 'Vanavond live in FoxFarm' : 'Dit optreden is geweest';
+    }
+  }
 
   // Lightbox
   const photos = [
