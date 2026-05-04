@@ -681,6 +681,27 @@
       fill: currentColor;
       flex-shrink: 0;
     }
+    .footer-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid rgba(240,235,227,0.2);
+      background: rgba(240,235,227,0.04);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .footer-download:hover {
+      background: rgba(240,235,227,0.1);
+      border-color: rgba(240,235,227,0.42);
+      transform: translateY(-2px);
+    }
     .nav-social {
       display: flex;
       gap: 18px;
@@ -732,6 +753,7 @@
       .photo-grid { grid-template-columns: repeat(2, 1fr); }
       .photo-item:nth-child(1) { grid-column: span 2; }
       footer { padding: 36px 24px; grid-template-columns: 1fr; justify-items: center; gap: 18px; text-align: center; }
+      .footer-download { width: 100%; }
       .nav-social { margin-left: 16px; padding-left: 16px; gap: 14px; }
     }
     @media (max-width: 480px) {
@@ -897,6 +919,7 @@
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Facebook
     </a>
+    <a class="footer-download" href="rider_stage_plot_bware.pdf" download>Rider + Stageplot (PDF)</a>
   </div>
 </footer>
 
