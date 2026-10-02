@@ -15,13 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
-  <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "w61ccmn7u4");
-  </script>
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -48,7 +42,7 @@
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <img src="bware_logo.jpg" alt="BWare" class="hero-logo" />
+    <img src="assets/bware_logo.jpg" alt="BWare" class="hero-logo" />
     <p class="hero-tagline">— We Rock —</p>
   </div>
   <div class="hero-scroll"><span>Scrollen</span></div>
@@ -60,7 +54,7 @@
     <div class="reveal">
       <h2>Full<br><em>Throttle</em><br>Live</h2>
       <figure class="about-media">
-        <img src="pictures/bware_band.jpg" alt="BWare live optreden" loading="lazy" />
+        <img src="assets/bware_band.jpg" alt="BWare live optreden" loading="lazy" />
         <figcaption>Live energie, rauw en vol overtuiging</figcaption>
       </figure>
     </div>
@@ -197,125 +191,9 @@
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Facebook
     </a>
-    <a class="footer-download" href="rider_stage_plot_bware.pdf" download>Rider + Stageplot (PDF)</a>
+    <a class="footer-download" href="assets/rider_stage_plot_bware.pdf" download>Rider + Stageplot (PDF)</a>
   </div>
 </footer>
 
-<script>
-  // Nav: frost on scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('solid', window.scrollY > 60);
-  }, { passive: true });
-
-  // Scroll reveal
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Gig countdown (Europe/Amsterdam local time)
-  const gigCountdown = document.getElementById('gig-countdown');
-  if (gigCountdown) {
-    const eventDate = new Date(2026, 4, 9, 0, 0, 0);
-    const now = new Date();
-    const msLeft = eventDate.getTime() - now.getTime();
-    const dayMs = 24 * 60 * 60 * 1000;
-
-    if (msLeft > 0) {
-      const days = Math.ceil(msLeft / dayMs);
-      gigCountdown.textContent = `Nog ${days} dag${days === 1 ? '' : 'en'} tot FoxFarm`;
-    } else {
-      const eventEnd = new Date(2026, 4, 9, 23, 59, 0);
-      gigCountdown.textContent = now <= eventEnd ? 'Vanavond live in FoxFarm' : 'Dit optreden is geweest';
-    }
-  }
-
-  // Lightbox
-  const photos = [
-    'pictures/Bware_Foxfarm_1.JPG',
-    'pictures/Bware_Foxfarm_10.JPG',
-    'pictures/Bware_Foxfarm_11.JPG',
-    'pictures/Bware_Foxfarm_12.JPG',
-    'pictures/Bware_Foxfarm_13.JPG',
-    'pictures/Bware_Foxfarm_14.JPG',
-    'pictures/Bware_Foxfarm_15.JPG',
-    'pictures/Bware_Foxfarm_17.JPG',
-    'pictures/Bware_Foxfarm_19.JPG',
-    'pictures/Bware_Foxfarm_2.JPG',
-    'pictures/Bware_Foxfarm_20.JPG',
-    'pictures/Bware_Foxfarm_21.JPG',
-    'pictures/Bware_Foxfarm_22.JPG',
-    'pictures/Bware_Foxfarm_23.JPG',
-    'pictures/Bware_Foxfarm_24.JPG',
-    'pictures/Bware_Foxfarm_25.JPG',
-    'pictures/Bware_Foxfarm_26.JPG',
-    'pictures/Bware_Foxfarm_3.JPG',
-    'pictures/Bware_Foxfarm_4.JPG',
-    'pictures/Bware_Foxfarm_5.JPG',
-    'pictures/Bware_Foxfarm_6.JPG',
-    'pictures/Bware_Foxfarm_7.JPG',
-    'pictures/Bware_Foxfarm_8.JPG',
-    'pictures/Bware_Foxfarm_9.JPG',
-    'pictures/picture%20(1).jpeg',
-    'pictures/picture%20(10).jpeg',
-    'pictures/picture%20(11).jpeg',
-    'pictures/picture%20(12).jpeg',
-    'pictures/picture%20(13).jpeg',
-    'pictures/picture%20(14).jpeg',
-    'pictures/picture%20(15).jpeg',
-    'pictures/picture%20(2).jpeg',
-    'pictures/picture%20(3).jpeg',
-    'pictures/picture%20(4).jpeg',
-    'pictures/picture%20(5).jpeg',
-    'pictures/picture%20(6).jpeg',
-    'pictures/picture%20(7).jpeg',
-    'pictures/picture%20(8).jpeg',
-    'pictures/picture%20(9).jpeg',
-  ];
-  let cur = 0;
-  const lb    = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-
-  function showPhoto(idx) {
-    cur = (idx + photos.length) % photos.length;
-    lbImg.src = photos[cur];
-  }
-  function openLB(idx) {
-    showPhoto(idx);
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLB() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.photo-item').forEach(el => {
-    el.addEventListener('click', () => openLB(Number(el.dataset.index)));
-  });
-
-  // Bio expand toggle
-  const btnExpand = document.getElementById('btn-expand');
-  const bioMore   = document.getElementById('bio-more');
-  btnExpand.addEventListener('click', () => {
-    const isOpen = bioMore.classList.toggle('open');
-    btnExpand.classList.toggle('open', isOpen);
-    btnExpand.setAttribute('aria-expanded', String(isOpen));
-    btnExpand.querySelector('.arrow').parentElement.childNodes[0].textContent = isOpen ? 'Lees minder ' : 'Lees meer ';
-  });
-  document.getElementById('lb-close').addEventListener('click', closeLB);
-  document.getElementById('lb-prev').addEventListener('click', () => showPhoto(cur - 1));
-  document.getElementById('lb-next').addEventListener('click', () => showPhoto(cur + 1));
-  lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'ArrowLeft')  showPhoto(cur - 1);
-    if (e.key === 'ArrowRight') showPhoto(cur + 1);
-    if (e.key === 'Escape')     closeLB();
-  });
-</script>
 </body>
 </html>
